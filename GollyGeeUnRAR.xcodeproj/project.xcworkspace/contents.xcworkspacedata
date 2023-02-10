@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:GeeUnRAR.xcodeproj">
+      location = "self:GollyGeeUnRAR.xcodeproj">
    </FileRef>
 </Workspace>

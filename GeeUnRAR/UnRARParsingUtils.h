@@ -1,12 +1,13 @@
 //
 //  UnRARParsingUtils.h
-//  GeeUnRAR
 //
-//  Created by Giuliano A. Montecarlo on 3/27/11.
+//  GollyGeeUnRAR - Mac OS X GUI for unrar
+//  Based on GeeUnRAR
+//  Created by Robert Kennedy
+//  Copyright 2022 Robert Kennedy
+//
+//  GeeUnRAR created by Giuliano A. Montecarlo on 3/27/11.
 //  Copyright 2011 Giuliano A. Montecarlo. All rights reserved.
-//
-//  GeeUnRAR - Mac OS X GUI for unrar
-//  Copyright (C) 2011  Giuliano A. Montecarlo
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -33,5 +34,6 @@
 //E = Error
 //F = Extracting Filename
 //O = Overwrite it?
+
 + (NSArray *)parseTerminal:(NSString *)text;
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D428184827B0AC8600B17EA0 /* unrar-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = D428184727B0AC8600B17EA0 /* unrar-license.txt */; };
+		D45A0DAC27B056FD005E62CD /* unrar in Resources */ = {isa = PBXBuildFile; fileRef = D45A0DAB27B056FD005E62CD /* unrar */; };
 		DF086F54133FE2B400240683 /* UnRARParsingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DF086F53133FE2B400240683 /* UnRARParsingUtils.m */; };
 		DF118D7D13401F0C00435C14 /* unrar.icns in Resources */ = {isa = PBXBuildFile; fileRef = DF118D7C13401F0C00435C14 /* unrar.icns */; };
 		DFD69E19133F9EB700EC2C70 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD69E18133F9EB700EC2C70 /* Cocoa.framework */; };
@@ -20,7 +22,6 @@
 		DFD69E43133F9EB800EC2C70 /* GeeUnRARTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD69E42133F9EB800EC2C70 /* GeeUnRARTests.m */; };
 		DFD69E4D133F9F9E00EC2C70 /* ExtractionWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD69E4C133F9F9E00EC2C70 /* ExtractionWindow.xib */; };
 		DFD69E52133FB5F600EC2C70 /* ExtractionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD69E51133FB5F600EC2C70 /* ExtractionWindowController.m */; };
-		DFD69E55133FC79D00EC2C70 /* unrar in Resources */ = {isa = PBXBuildFile; fileRef = DFD69E54133FC79D00EC2C70 /* unrar */; };
 		DFD69E57133FD95000EC2C70 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD69E56133FD95000EC2C70 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -35,31 +36,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D428184727B0AC8600B17EA0 /* unrar-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unrar-license.txt"; sourceTree = "<group>"; };
+		D45A0DAB27B056FD005E62CD /* unrar */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = unrar; sourceTree = "<group>"; };
 		DF086F52133FE2B400240683 /* UnRARParsingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnRARParsingUtils.h; sourceTree = "<group>"; };
 		DF086F53133FE2B400240683 /* UnRARParsingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnRARParsingUtils.m; sourceTree = "<group>"; };
 		DF118D7C13401F0C00435C14 /* unrar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = unrar.icns; path = GeeUnRARTests/unrar.icns; sourceTree = SOURCE_ROOT; };
-		DFD69E14133F9EB700EC2C70 /* GeeUnRAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeeUnRAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFD69E14133F9EB700EC2C70 /* GollyGeeUnRAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GollyGeeUnRAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD69E18133F9EB700EC2C70 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DFD69E1B133F9EB700EC2C70 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DFD69E1C133F9EB700EC2C70 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DFD69E1D133F9EB700EC2C70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DFD69E20133F9EB700EC2C70 /* GeeUnRAR-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GeeUnRAR-Info.plist"; sourceTree = "<group>"; };
+		DFD69E20133F9EB700EC2C70 /* GollyGeeUnRAR-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GollyGeeUnRAR-Info.plist"; sourceTree = "<group>"; };
 		DFD69E22133F9EB700EC2C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DFD69E24133F9EB700EC2C70 /* GeeUnRAR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeeUnRAR-Prefix.pch"; sourceTree = "<group>"; };
+		DFD69E24133F9EB700EC2C70 /* GollyGeeUnRAR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GollyGeeUnRAR-Prefix.pch"; sourceTree = "<group>"; };
 		DFD69E25133F9EB700EC2C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DFD69E28133F9EB700EC2C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		DFD69E2A133F9EB700EC2C70 /* GeeUnRARAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeeUnRARAppDelegate.h; sourceTree = "<group>"; };
 		DFD69E2B133F9EB700EC2C70 /* GeeUnRARAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeeUnRARAppDelegate.m; sourceTree = "<group>"; };
-		DFD69E35133F9EB800EC2C70 /* GeeUnRARTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeeUnRARTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFD69E3B133F9EB800EC2C70 /* GeeUnRARTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GeeUnRARTests-Info.plist"; sourceTree = "<group>"; };
+		DFD69E35133F9EB800EC2C70 /* GollyGeeUnRARTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GollyGeeUnRARTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFD69E3B133F9EB800EC2C70 /* GollyGeeUnRARTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GollyGeeUnRARTests-Info.plist"; sourceTree = "<group>"; };
 		DFD69E3D133F9EB800EC2C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DFD69E3F133F9EB800EC2C70 /* GeeUnRARTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeeUnRARTests-Prefix.pch"; sourceTree = "<group>"; };
+		DFD69E3F133F9EB800EC2C70 /* GollyGeeUnRARTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GollyGeeUnRARTests-Prefix.pch"; sourceTree = "<group>"; };
 		DFD69E40133F9EB800EC2C70 /* GeeUnRARTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeeUnRARTests.h; sourceTree = "<group>"; };
 		DFD69E42133F9EB800EC2C70 /* GeeUnRARTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeeUnRARTests.m; sourceTree = "<group>"; };
 		DFD69E4C133F9F9E00EC2C70 /* ExtractionWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtractionWindow.xib; sourceTree = "<group>"; };
 		DFD69E50133FB5F600EC2C70 /* ExtractionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtractionWindowController.h; sourceTree = "<group>"; };
 		DFD69E51133FB5F600EC2C70 /* ExtractionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtractionWindowController.m; sourceTree = "<group>"; };
-		DFD69E54133FC79D00EC2C70 /* unrar */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = unrar; sourceTree = "<group>"; };
 		DFD69E56133FD95000EC2C70 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,8 +98,8 @@
 		DFD69E15133F9EB700EC2C70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DFD69E14133F9EB700EC2C70 /* GeeUnRAR.app */,
-				DFD69E35133F9EB800EC2C70 /* GeeUnRARTests.octest */,
+				DFD69E14133F9EB700EC2C70 /* GollyGeeUnRAR.app */,
+				DFD69E35133F9EB800EC2C70 /* GollyGeeUnRARTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,9 +143,9 @@
 		DFD69E1F133F9EB700EC2C70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DFD69E20133F9EB700EC2C70 /* GeeUnRAR-Info.plist */,
+				DFD69E20133F9EB700EC2C70 /* GollyGeeUnRAR-Info.plist */,
 				DFD69E21133F9EB700EC2C70 /* InfoPlist.strings */,
-				DFD69E24133F9EB700EC2C70 /* GeeUnRAR-Prefix.pch */,
+				DFD69E24133F9EB700EC2C70 /* GollyGeeUnRAR-Prefix.pch */,
 				DFD69E25133F9EB700EC2C70 /* main.m */,
 				DFD69E27133F9EB700EC2C70 /* Credits.rtf */,
 			);
@@ -163,9 +165,9 @@
 		DFD69E3A133F9EB800EC2C70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DFD69E3B133F9EB800EC2C70 /* GeeUnRARTests-Info.plist */,
+				DFD69E3B133F9EB800EC2C70 /* GollyGeeUnRARTests-Info.plist */,
 				DFD69E3C133F9EB800EC2C70 /* InfoPlist.strings */,
-				DFD69E3F133F9EB800EC2C70 /* GeeUnRARTests-Prefix.pch */,
+				DFD69E3F133F9EB800EC2C70 /* GollyGeeUnRARTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -174,7 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				DF118D7C13401F0C00435C14 /* unrar.icns */,
-				DFD69E54133FC79D00EC2C70 /* unrar */,
+				D45A0DAB27B056FD005E62CD /* unrar */,
+				D428184727B0AC8600B17EA0 /* unrar-license.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -182,9 +185,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DFD69E13133F9EB700EC2C70 /* GeeUnRAR */ = {
+		DFD69E13133F9EB700EC2C70 /* GollyGeeUnRAR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DFD69E46133F9EB800EC2C70 /* Build configuration list for PBXNativeTarget "GeeUnRAR" */;
+			buildConfigurationList = DFD69E46133F9EB800EC2C70 /* Build configuration list for PBXNativeTarget "GollyGeeUnRAR" */;
 			buildPhases = (
 				DFD69E10133F9EB700EC2C70 /* Sources */,
 				DFD69E11133F9EB700EC2C70 /* Frameworks */,
@@ -194,14 +197,14 @@
 			);
 			dependencies = (
 			);
-			name = GeeUnRAR;
+			name = GollyGeeUnRAR;
 			productName = GeeUnRAR;
-			productReference = DFD69E14133F9EB700EC2C70 /* GeeUnRAR.app */;
+			productReference = DFD69E14133F9EB700EC2C70 /* GollyGeeUnRAR.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DFD69E34133F9EB800EC2C70 /* GeeUnRARTests */ = {
+		DFD69E34133F9EB800EC2C70 /* GollyGeeUnRARTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DFD69E49133F9EB800EC2C70 /* Build configuration list for PBXNativeTarget "GeeUnRARTests" */;
+			buildConfigurationList = DFD69E49133F9EB800EC2C70 /* Build configuration list for PBXNativeTarget "GollyGeeUnRARTests" */;
 			buildPhases = (
 				DFD69E30133F9EB800EC2C70 /* Sources */,
 				DFD69E31133F9EB800EC2C70 /* Frameworks */,
@@ -213,9 +216,9 @@
 			dependencies = (
 				DFD69E38133F9EB800EC2C70 /* PBXTargetDependency */,
 			);
-			name = GeeUnRARTests;
+			name = GollyGeeUnRARTests;
 			productName = GeeUnRARTests;
-			productReference = DFD69E35133F9EB800EC2C70 /* GeeUnRARTests.octest */;
+			productReference = DFD69E35133F9EB800EC2C70 /* GollyGeeUnRARTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -223,7 +226,10 @@
 /* Begin PBXProject section */
 		DFD69E0B133F9EB600EC2C70 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = DFD69E0E133F9EB600EC2C70 /* Build configuration list for PBXProject "GeeUnRAR" */;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = DFD69E0E133F9EB600EC2C70 /* Build configuration list for PBXProject "GollyGeeUnRAR" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -235,8 +241,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DFD69E13133F9EB700EC2C70 /* GeeUnRAR */,
-				DFD69E34133F9EB800EC2C70 /* GeeUnRARTests */,
+				DFD69E13133F9EB700EC2C70 /* GollyGeeUnRAR */,
+				DFD69E34133F9EB800EC2C70 /* GollyGeeUnRARTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,9 +255,10 @@
 				DFD69E23133F9EB700EC2C70 /* InfoPlist.strings in Resources */,
 				DFD69E29133F9EB700EC2C70 /* Credits.rtf in Resources */,
 				DFD69E4D133F9F9E00EC2C70 /* ExtractionWindow.xib in Resources */,
-				DFD69E55133FC79D00EC2C70 /* unrar in Resources */,
 				DFD69E57133FD95000EC2C70 /* MainMenu.xib in Resources */,
 				DF118D7D13401F0C00435C14 /* unrar.icns in Resources */,
+				D45A0DAC27B056FD005E62CD /* unrar in Resources */,
+				D428184827B0AC8600B17EA0 /* unrar-license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +314,7 @@
 /* Begin PBXTargetDependency section */
 		DFD69E38133F9EB800EC2C70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DFD69E13133F9EB700EC2C70 /* GeeUnRAR */;
+			target = DFD69E13133F9EB700EC2C70 /* GollyGeeUnRAR */;
 			targetProxy = DFD69E37133F9EB800EC2C70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -344,6 +351,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -351,10 +362,11 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -362,13 +374,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -376,13 +393,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GeeUnRAR/GeeUnRAR-Prefix.pch";
-				INFOPLIST_FILE = "GeeUnRAR/GeeUnRAR-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "GeeUnRAR/GollyGeeUnRAR-Prefix.pch";
+				INFOPLIST_FILE = "GeeUnRAR/GollyGeeUnRAR-Info.plist";
+				PRODUCT_NAME = GollyGeeUnRAR;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,13 +409,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GeeUnRAR/GeeUnRAR-Prefix.pch";
-				INFOPLIST_FILE = "GeeUnRAR/GeeUnRAR-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "GeeUnRAR/GollyGeeUnRAR-Prefix.pch";
+				INFOPLIST_FILE = "GeeUnRAR/GollyGeeUnRAR-Info.plist";
+				PRODUCT_NAME = GollyGeeUnRAR;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -406,19 +425,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GeeUnRAR.app/Contents/MacOS/GeeUnRAR";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GollyGeeUnRAR.app/Contents/MacOS/GollyGeeUnRAR";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GeeUnRARTests/GeeUnRARTests-Prefix.pch";
-				INFOPLIST_FILE = "GeeUnRARTests/GeeUnRARTests-Info.plist";
+				GCC_PREFIX_HEADER = "GeeUnRARTests/GollyGeeUnRARTests-Prefix.pch";
+				INFOPLIST_FILE = "GeeUnRARTests/GollyGeeUnRARTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GollyGeeUnRARTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -428,19 +448,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GeeUnRAR.app/Contents/MacOS/GeeUnRAR";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GollyGeeUnRAR.app/Contents/MacOS/GollyGeeUnRAR";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GeeUnRARTests/GeeUnRARTests-Prefix.pch";
-				INFOPLIST_FILE = "GeeUnRARTests/GeeUnRARTests-Info.plist";
+				GCC_PREFIX_HEADER = "GeeUnRARTests/GollyGeeUnRARTests-Prefix.pch";
+				INFOPLIST_FILE = "GeeUnRARTests/GollyGeeUnRARTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GollyGeeUnRARTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -449,7 +470,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DFD69E0E133F9EB600EC2C70 /* Build configuration list for PBXProject "GeeUnRAR" */ = {
+		DFD69E0E133F9EB600EC2C70 /* Build configuration list for PBXProject "GollyGeeUnRAR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DFD69E44133F9EB800EC2C70 /* Debug */,
@@ -458,7 +479,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DFD69E46133F9EB800EC2C70 /* Build configuration list for PBXNativeTarget "GeeUnRAR" */ = {
+		DFD69E46133F9EB800EC2C70 /* Build configuration list for PBXNativeTarget "GollyGeeUnRAR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DFD69E47133F9EB800EC2C70 /* Debug */,
@@ -467,7 +488,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DFD69E49133F9EB800EC2C70 /* Build configuration list for PBXNativeTarget "GeeUnRARTests" */ = {
+		DFD69E49133F9EB800EC2C70 /* Build configuration list for PBXNativeTarget "GollyGeeUnRARTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DFD69E4A133F9EB800EC2C70 /* Debug */,

@@ -1,12 +1,13 @@
 //
 //  ExtractionWindowController.m
-//  GeeUnRAR
 //
-//  Created by Giuliano A. Montecarlo on 3/27/11.
+//  GollyGeeUnRAR - Mac OS X GUI for unrar
+//  Based on GeeUnRAR
+//  Created by Robert Kennedy
+//  Copyright 2022 Robert Kennedy
+//
+//  GeeUnRAR created by Giuliano A. Montecarlo on 3/27/11.
 //  Copyright 2011 Giuliano A. Montecarlo. All rights reserved.
-//
-//  GeeUnRAR - Mac OS X GUI for unrar
-//  Copyright (C) 2011  Giuliano A. Montecarlo
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -41,6 +42,11 @@
 @synthesize passwordOKButton;
 @synthesize errorCloseButton;
 @synthesize ucpFilename;
+
+@synthesize renameSheet;
+@synthesize renameFileName;
+@synthesize renameOKButton;
+
 
 
 
@@ -89,6 +95,8 @@
         } else {
             NSLog(@"CLOSE WINDOW!");
             [self.window close];
+            [self release];   //  Needed to close main extraction window!
+            // [[NSApplication sharedApplication] terminate:nil]; // This will terminate the program
         }
     }
     
@@ -129,6 +137,13 @@
     NSData *d = [[passwordField.stringValue stringByAppendingString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding];
     [[inputPipe fileHandleForWriting] writeData:d];
 
+    [NSApp stopModal];
+}
+
+- (IBAction)renameOKClicked:(id)sender {
+    NSData *d = [[renameFileName.stringValue stringByAppendingString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding];
+    [[inputPipe fileHandleForWriting] writeData:d];
+    
     [NSApp stopModal];
 }
 
@@ -185,12 +200,11 @@
     NSString *recurse = @"-r";
     NSString *keepBroken = @"-kb";
     //NSString *password = @"-p";
-    
-//    unrar = [[NSTask alloc] init];
-    
+        
     /* set standard I/O, here to a NSPipe */
     [unrar setStandardOutput:taskPipe];
-    [unrar setStandardError:taskPipe];
+    // [unrar setStandardError: [unrar standardOutput]]; // Get standard error output too
+    [unrar setStandardError:taskPipe];  // Get standard error output too
     [unrar setStandardInput:inputPipe];
     
     /* set arguments */
@@ -206,8 +220,8 @@
         //NSLog(@"Keep Broken Extracted Files");
         [args addObject:keepBroken];
     }
-    /*
-    //NSLog(@"Checking Password");
+    
+    /* NSLog(@"Checking Password");
     if(![[passwordField stringValue] isEqualTo:@""])
     {
         //NSLog(@"Password is not null");
@@ -217,9 +231,12 @@
         [passwordField setStringValue:@""];
     }*/
     
-    
     //NSLog(@"Path is %@", path);
     //NSLog(@"Location is %@", location);
+    
+    //[args addObject:@"-idc"];  // Suppress unrar copyright notice
+    //[args addObject:@"-pchocolate"];  // Add password
+    
     [args addObject:[file path]];
     
     //if ([@"YES" isEqual:[[NSUserDefaults standardUserDefaults] objectForKey:@"Extract files to the same directory as the archive"]]) {
@@ -253,21 +270,23 @@
     
     /* we want taskPipe to send notifications to be able to grab the output */
     [[taskPipe fileHandleForReading] readInBackgroundAndNotify];
-    
+        
     //[progressBar startAnimation:self];
     
-    [unrar launch];
+   [unrar launch];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printTaskOutput:) name:NSFileHandleReadCompletionNotification object:[[unrar standardOutput] fileHandleForReading]];
+   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printTaskOutput:) name:NSFileHandleReadCompletionNotification object:[[unrar standardOutput] fileHandleForReading]];
     
     //[unrar waitUntilExit];
 }
 
-- (void)printTaskOutput:(NSNotification *)aNotification
+- (void)printTaskOutput:(NSNotification *)unrarNotification
 {
     // there is Data from the task output or error file to print in the Sheet Window
+    
     NSString *outputString;
-    NSData *data = [[aNotification userInfo] objectForKey:NSFileHandleNotificationDataItem];
+     
+    NSData *data = [[unrarNotification userInfo] objectForKey:NSFileHandleNotificationDataItem];
     
     if (data && [data length])
     {
@@ -276,7 +295,7 @@
         
         NSArray *mparsed = [UnRARParsingUtils parseTerminal:outputString];
         NSLog(@"PARSED: %@", mparsed);
-        
+               
         for(NSArray *parsed in mparsed) {
             if(parsed != nil && [[parsed objectAtIndex:0] isEqualToString:@"P"]) {
                 if(!lastPercentageUpdate) {
@@ -300,11 +319,11 @@
                     NSInteger minutes = [components minute];
                     NSInteger seconds = [components second];
 
-                    remainingTime.stringValue = [NSString stringWithFormat:@"%02d:%02d:%02d left", hours, minutes, seconds, nil];
+                    remainingTime.stringValue = [NSString stringWithFormat:@"%02ld:%02ld:%02ld left", (long)hours, (long)minutes, (long)seconds, nil];
                     [gregorian release];
                     
                     [self.progressbar setDoubleValue:[[parsed objectAtIndex:1] doubleValue]];
-                    self.window.title = [[[parsed objectAtIndex:1] stringValue] stringByAppendingString:@"% - GeeUnRAR"];
+                    self.window.title = [[[parsed objectAtIndex:1] stringValue] stringByAppendingString:@"% - GollyGeeUnRAR"];
                 }
             } else if (parsed != nil && [[parsed objectAtIndex:0] isEqualToString:@"F"]){
                 [self.filename setStringValue:[[parsed objectAtIndex:1] lastPathComponent]];
@@ -338,6 +357,16 @@
                 [NSApp runModalForWindow:passwordSheet];
                 [NSApp endSheet:passwordSheet];
                 [passwordSheet orderOut:self];
+            }   else if (parsed != nil && [[parsed objectAtIndex:0] isEqualToString:@"R"]){
+                //passwordText.stringValue = [@"Please enter the password for:\n" stringByAppendingString:[[parsed objectAtIndex:1] lastPathComponent]];
+                [NSApp beginSheet:renameSheet
+                   modalForWindow:self.window
+                    modalDelegate:nil
+                   didEndSelector:nil
+                      contextInfo:nil];
+                [NSApp runModalForWindow:renameSheet];
+                [NSApp endSheet:renameSheet];
+                [renameSheet orderOut:self];
             } else if (parsed != nil && [[parsed objectAtIndex:0] isEqualToString:@"TOT"]){
                 //[progressbar setHidden:YES];
                 [progressbar stopAnimation:self];
@@ -350,7 +379,7 @@
             } else if (parsed != nil && [[parsed objectAtIndex:0] isEqualToString:@"AO"]){
                 [progressbar stopAnimation:self];
                 progressbar.doubleValue = 100.0;
-                self.window.title = @"100% - GeeUnRAR";
+                self.window.title = @"100% - GollyGeeUnRAR";
                 
                 remainingTime.stringValue = @"All OK";
                 [cancelButton setBezelStyle:NSRoundedBezelStyle];
@@ -358,7 +387,7 @@
                 [cancelButton setTitle:@"Done"];
                 filename.stringValue = @"";
             } else if (parsed != nil && [[parsed objectAtIndex:0] isEqualToString:@"NFTE"]){
-                remainingTime.stringValue = @"No files to extract";
+                remainingTime.stringValue = @"No files to extract - Wrong Password!";
                 [cancelButton setBezelStyle:NSRoundedBezelStyle];
                 [self.window setDefaultButtonCell:[cancelButton cell]];
                 [cancelButton setTitle:@"Close"];
@@ -378,10 +407,10 @@
                 [NSApp runModalForWindow:errorSheet];
                 [NSApp endSheet:errorSheet];
                 [errorSheet orderOut:self];
-            }
+            } 
         }
         
-        [[aNotification object] readInBackgroundAndNotify];
+        [[unrarNotification object] readInBackgroundAndNotify];
     }
 }
 @end

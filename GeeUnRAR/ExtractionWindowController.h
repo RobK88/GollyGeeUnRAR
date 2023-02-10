@@ -1,12 +1,13 @@
 //
 //  ExtractionWindowController.h
-//  GeeUnRAR
 //
-//  Created by Giuliano A. Montecarlo on 3/27/11.
+//  GollyGeeUnRAR - Mac OS X GUI for unrar
+//  Based on GeeUnRAR
+//  Created by Robert Kennedy
+//  Copyright 2022 Robert Kennedy
+//
+//  GeeUnRAR created by Giuliano A. Montecarlo on 3/27/11.
 //  Copyright 2011 Giuliano A. Montecarlo. All rights reserved.
-//
-//  GeeUnRAR - Mac OS X GUI for unrar
-//  Copyright (C) 2011  Giuliano A. Montecarlo
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -50,6 +51,11 @@
     
     NSDate *lastPercentageUpdate;
     NSTimeInterval averageTimeBetweenPercentageUpdates;
+    
+    NSWindow *renameSheet;
+    NSTextField *renameFileName;
+    NSButton *renameOKButton;
+   
 }
 @property (assign) IBOutlet NSProgressIndicator *progressbar;
 @property (assign) IBOutlet NSTextFieldCell *remainingTime;
@@ -68,10 +74,17 @@
 @property (assign) IBOutlet NSButton *errorCloseButton;
 @property (assign) IBOutlet NSTextField *ucpFilename;
 
+@property (assign) IBOutlet NSWindow *renameSheet;
+@property (assign) IBOutlet NSButton *renameOKButton;
+
+@property (assign) IBOutlet NSTextField *renameFileName;
+
 
 - (IBAction)cancelClicked:(id)sender;
 - (IBAction)closeClicked:(id)sender;
 - (IBAction)passwordOKClicked:(id)sender;
+
+- (IBAction)renameOKClicked:(id)sender;
 
 - (IBAction)overwriteYes:(id)sender;
 - (IBAction)overwriteNo:(id)sender;
